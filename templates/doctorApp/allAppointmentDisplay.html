@@ -1,0 +1,44 @@
+{% extends 'doctorApp/base.html' %}
+
+{% block content %}
+<div class="container-fluid"></div>
+{%   for appoi in appointment_list %}
+
+<div>
+    <div class="alert-light card">
+        
+        <div class="card-body">
+
+          <div class="d-flex  bd-highlight">
+            <p>
+                Doctor Name-:<a href="" >
+                    {{appoi.doctorId.user.first_name}}&nbsp;&nbsp;{{appoi.doctorId.user.last_name}}
+                </a> 
+            </p>
+        </div>
+            <br>
+            <p>
+                User Name-:<a href="" >
+                    {{appoi.patientId.user.first_name}}&nbsp;&nbsp;{{appoi.patientId.user.last_name}}
+                </a> 
+            </p>
+    <p>
+        Patient Name:-{{appoi.patientName}}
+    </p>
+    <p>
+        Time:-{{appoi.appointmentTime}}&nbsp; 
+    </p>
+    <p>
+        Date:-{{appoi.appointmentDate}}
+        
+    </p>
+    <br>
+</div>
+</div>
+
+
+{%   endfor  %}
+
+</div>
+
+{% endblock %}

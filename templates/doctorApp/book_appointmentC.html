@@ -1,0 +1,50 @@
+{% extends 'doctorApp/base.html' %}
+
+
+
+
+{% block content %}
+<br>
+<p>
+  
+  <p>preferred_choice--{{preferred_choice}}</p> 
+  <p>X--{{x}}</p> 
+  <p>Y--{{y}}</p>
+  
+  <p>Appointed:{{appointed}}</p>
+  <p>get_from_doctor--{{get_from_doctor}}</p>
+  
+  {%    for i in x %}
+  
+  {{i}}
+  
+  {% endfor %}
+</p>
+<div class="form-group">
+<form action="" method="POST">
+    {%  csrf_token %}
+
+{{form.as_p}}
+<p>
+    <label for="id_appointmentTime">AppointmentTime:</label>
+    <select name="appointmentTime" id="id_appointmentTime">
+  <option value="11:00 AM - 12:00 AM">11:00 AM - 12:00 AM</option>
+
+  <option value="12:00 AM - 01:00 AM">12:00 AM - 01:00 AM</option>
+
+  <option value="01:00 AM - 02:00 AM">01:00 AM - 02:00 AM</option>
+
+  <option value="no-appointment">no-appointment</option>
+
+</select>
+    
+    
+      
+    
+  </p>
+<button class="btn btn-secondary" >Submit</button>
+
+</form>
+</div>
+
+{% endblock %}

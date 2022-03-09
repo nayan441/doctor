@@ -1,0 +1,36 @@
+{%  extends 'doctorApp/base.html' %}
+{% block content %}
+
+<h1 class="text-center">Home Page</h1>
+
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'appointmentPage' %}"> bookAppopintment</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'doctorRegistration' %}"> Register as Doctor</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'patientRegistration' %}"> Register as Patient</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'doctorEdit' %}"> Edit as Doctor</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'patientEdit' %}"> Edit as Patient</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'doctorProfile' %}"> doctorProfile</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'patientProfile' %}"> patientProfile</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'login' %}"> Login</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'allDoctorProfileDisplay' %}"> List Doctors</a></button>
+<br>
+<hr>
+<button class="text-center"><a href="{%   url 'allAppointmentDisplay' %}"> List Appointment</a></button>
+{% endblock %}

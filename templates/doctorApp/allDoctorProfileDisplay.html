@@ -1,0 +1,38 @@
+{% extends 'doctorApp/base.html' %}
+
+{% block content %}
+<div class="container-fluid"></div>
+{%   for doctor in doctor_list %}
+
+<div>
+    <div class="alert-light card">
+        
+        <div class="card-body">
+
+          <div class="d-flex  bd-highlight">
+            <p>
+                Doctor Name-:<a href="" >
+                    {{doctor.user.first_name}}&nbsp;&nbsp;{{doctor.user.last_name}}
+                </a> 
+            </p>
+        </div>
+    <p>
+        Specialization:-{{doctor.specialization}}
+    </p>
+    <p>
+        Experience:-{{doctor.experience}}&nbsp; Years.
+    </p>
+    <p>
+        Status:-{{doctor.status}}
+        
+    </p>
+    <br>
+</div>
+</div>
+
+
+{%   endfor  %}
+
+</div>
+
+{% endblock %}

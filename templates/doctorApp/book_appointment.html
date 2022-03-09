@@ -1,0 +1,63 @@
+{% extends 'doctorApp/base.html' %}
+{% block content %}
+
+<div class="form-group">
+<form action="{% url 'appointment' %}" method="POST">
+    {%  csrf_token %}
+<p>
+    <label for="id_patientId">PatientId:</label>
+    {{patient}}
+    <select name="patientId" required="" id="id_patientId">
+        
+        {% for patients in patient  %}
+        <option value={{patients.id}}>{{patients.id}}</option>
+        
+        {% endfor%}
+</select>
+  </p>  
+  <p>
+    <label for="id_doctorId">DoctorId:</label>
+    {{doctor}}
+    <select name="doctorId" required="" id="id_doctorId">
+        {% for doctors in doctor  %}
+        <option value={{doctors.id}}>{{doctors.id}}</option>
+        
+        {% endfor%}
+</select>
+      </p>
+  <p>
+    <label for="id_time">Time:</label>
+    {{timeslot}}
+    <select name="time" required="" id="id_time">
+        
+        {% for time in timeslot  %}
+        <option value={{time}}>{{time}}</option>
+        
+        {% endfor%}
+
+    </select>
+
+    </p>
+
+  <br>
+  <p>
+    <label for="id_patientName">PatientName:</label>
+    <input type="text" name="patientName" maxlength="40" required="" id="id_patientName">
+    
+    
+  </p>
+
+    <label for="id_description">Description:</label>
+    <textarea name="description" cols="40" rows="10" maxlength="500" required="" id="id_description">none</textarea>
+  </p>
+  
+  <p>
+    <label for="id_status">Status:</label>
+    <input type="checkbox" name="status" id="id_status"> 
+  </p>
+<input type="submit">Submit
+
+</form>
+</div>
+
+{% endblock %}
